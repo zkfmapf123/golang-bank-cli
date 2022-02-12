@@ -17,4 +17,6 @@ dev-run :
 # build && execute main.exe (prod)
 prod-run :
 	make build 
-	@./main
+
+test :
+	@go test -v src/files/files_test.go
