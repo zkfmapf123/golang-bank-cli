@@ -20,3 +20,11 @@
 ```
     touch Makefile
 ```
+
+### execute
+
+```
+    make prod-rund
+
+    파일안에 main.exec 파일을 실행
+```
