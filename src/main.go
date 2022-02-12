@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"golang-cli/src/cmd"
 	"golang-cli/src/utils"
 	"os"
-	"os/exec"
 )
 
 var menu int
@@ -20,15 +20,15 @@ func main() {
 
 		switch menu {
 		case 1:
-			fmt.Print(utils.REGISTER)
+			cmd.Register()
 		case 2:
-			fmt.Print(utils.SEARCH)
+			cmd.LookFor()
 		case 3:
-			fmt.Print(utils.DEPOSIT)
+			cmd.AddMoney()
 		case 4:
-			fmt.Print(utils.WITHDRAW)
+			cmd.MinMoney()
 		case 5:
-			fmt.Println(utils.DELETE)
+			cmd.PrintAll()
 		default:
 			fmt.Printf("%d is not valid", menu)
 			isExit = !isExit
@@ -37,11 +37,7 @@ func main() {
 		if isExit {
 			os.Exit(0)
 		}
-
-		cmd := exec.Command("clear")
-		cmd.Stdout = os.Stdout
-		cmd.Run()
+		cmd.Clear()
 		continue
 	}
-
 }
